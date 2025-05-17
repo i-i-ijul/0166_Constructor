@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Judul {
+class Judul{
 private:
     string nama;
 
@@ -14,7 +14,7 @@ public:
     friend class Petugas; // ngejadiin petugas sbg fri& class agar bisa memodifikasi
 };
 
-class Penulis {
+class Penulis{
 private:
     string namaPenulis;
 
@@ -27,7 +27,7 @@ public:
     friend class Petugas; // ngejadiin petugas sbg fri& class agar bisa memodifikasi
 };
 
-class StatusPeminjaman {
+class StatusPeminjaman{
 private:
     bool dipinjam;
 
@@ -40,7 +40,7 @@ public:
     friend class Petugas; // ngejadiin petugas sbg fri& class agar bisa memodifikasi
 };
 
-class Petugas {
+class Petugas{
 public:
     void tampilData(Judul j, Penulis p, StatusPeminjaman s){
         cout << "JUDUL BUKU: " << j.nama << endl;
@@ -48,9 +48,11 @@ public:
         cout << "STATUS: " << "dipinjam" << endl;
         cin >> s.dipinjam;
     }
+
+    friend class Admin;
 };
 
-int main() {
+int main(){
     Judul j("IJUL GANTENG");
     Penulis p("haqqi");
     StatusPeminjaman s("dipinjam");
